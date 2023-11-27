@@ -22,6 +22,7 @@ import { PokemonTypes } from '../UI/PokemonTypes';
 import { H4 } from '../UI/PokemonTypeTitle';
 import { PokemonTypesIcons } from '../UI/PokemonTypesIcons';
 import { PokemonType } from '../UI/PokemonType';
+import { PokemonsTypesContainer } from '../UI/PokemonTypesContainer';
 
 function CompareContainer({
   pokemon = undefined,
@@ -56,7 +57,7 @@ function CompareContainer({
         <div className="pokemon-types">
           <h4 className="pokemon-type-title">Strength</h4>
           <div className="pokemon-type-icons">
-            {createStatsArray(pokemon?.types!, "strength").map(
+            {createStatsArray(pokemon?.types!, 'strength').map(
               (stat: { image: string }) => (
                 <div className="pokemon-type">
                   <img src={stat.image} alt="" className="pokemon-type-image" />
@@ -68,7 +69,7 @@ function CompareContainer({
         <div className="pokemon-types">
           <h4 className="pokemon-type-title">Weakness</h4>
           <div className="pokemon-type-icons">
-            {createStatsArray(pokemon?.types!, "weakness").map(
+            {createStatsArray(pokemon?.types!, 'weakness').map(
               (stat: { image: string }) => (
                 <div className="pokemon-type">
                   <img src={stat.image} alt="" className="pokemon-type-image" />
@@ -80,7 +81,7 @@ function CompareContainer({
         <div className="pokemon-types">
           <h4 className="pokemon-type-title">Resistance</h4>
           <div className="pokemon-type-icons">
-            {createStatsArray(pokemon?.types!, "resistance").map(
+            {createStatsArray(pokemon?.types!, 'resistance').map(
               (stat: { image: string }) => (
                 <div className="pokemon-type">
                   <img src={stat.image} alt="" className="pokemon-type-image" />
@@ -92,7 +93,7 @@ function CompareContainer({
         <div className="pokemon-types">
           <h4 className="pokemon-type-title">Vulnerable</h4>
           <div className="pokemon-type-icons">
-            {createStatsArray(pokemon?.types!, "vulnerable").map(
+            {createStatsArray(pokemon?.types!, 'vulnerable').map(
               (stat: { image: string }) => (
                 <div className="pokemon-type">
                   <img src={stat.image} alt="" className="pokemon-type-image" />
@@ -105,26 +106,22 @@ function CompareContainer({
     );
   };
   return (
-    <div className="compare-container">
+    <SimpleContainer>
       {isEmpty && (
-        <div className="empty">
-          <button onClick={() => navigate("/search")}>
+        <EmptyCompareContainer>
+          <button onClick={() => navigate('/search')}>
             <FaPlus />
           </button>
           <h3>Add Pokemon for Comparison</h3>
-        </div>
+        </EmptyCompareContainer>
       )}
       {pokemon && (
-        <div className="compare-element" key={pokemon?.id}>
-          <div className="compare-info">
-            <div className="compare-details">
+        <CompareElements key={pokemon?.id}>
+          <CompareInfo>
+            <CompareDetails>
               <h3>{pokemon?.name}</h3>
-              <img
-                src={pokemon?.image}
-                alt="pokemon"
-                className="compare-image"
-              />
-            </div>
+              <CompareImage src={pokemon?.image} alt="pokemon" />
+            </CompareDetails>
             <div className="pokemon-types-container">
               <div className="pokemon-types">
                 <h4 className="pokemon-type-title">Type</h4>
@@ -146,32 +143,32 @@ function CompareContainer({
               </div>
               {getStats()}
             </div>
-          </div>
-          <div className="compare-action-buttons">
-            <button
-              className="compare-btn"
+          </CompareInfo>
+          <CompareActionButtons>
+            <StyledButton
+              buttonType="Add"
               onClick={() => {
                 dispatch(addPokemonToList(pokemon));
               }}
             >
               Add
-            </button>
-            <button
-              className="compare-btn"
+            </StyledButton>
+            <StyledButton
+              buttonType="View"
               onClick={() => navigate(`/pokemon/${pokemon?.id}`)}
             >
               View
-            </button>
-            <button
-              className="compare-btn"
+            </StyledButton>
+            <StyledButton
+              buttonType="Remove"
               onClick={() => dispatch(removeFromCompare({ id: pokemon?.id }))}
             >
               Remove
-            </button>
-          </div>
-        </div>
+            </StyledButton>
+          </CompareActionButtons>
+        </CompareElements>
       )}
-    </div>
+    </SimpleContainer>
   );
 }
 
