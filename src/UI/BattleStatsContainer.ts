@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const BattleStatsContainer = styled.div`
   ul {
@@ -7,6 +7,7 @@ const BattleStatsContainer = styled.div`
     flex-direction: column;
     gap: 0.5rem;
     letter-spacing: 0.1rem;
+    background-color: var(--component-background-color);
     li {
       display: grid;
       grid-template-columns: max-content 80%;
@@ -16,7 +17,7 @@ const BattleStatsContainer = styled.div`
   position: absolute;
   bottom: 3rem;
   right: 2rem;
-  color: white;
+  color: var(--font-color);
   padding: 1rem;
   width: 30rem;
   &::before {
@@ -39,7 +40,7 @@ const BattleStatsContainer = styled.div`
     background-color: transparent;
     border: 0.1rem solid var(--accent-color);
     outline: none;
-    color: white;
+    color: var(--font-color);
     text-transform: uppercase;
     font-weight: 700;
     letter-spacing: 0.1rem;
@@ -55,6 +56,20 @@ const BattleStatsContainer = styled.div`
       )
       center,
     $dot-color;
+  button {
+    position: absolute;
+    right: 1rem;
+    bottom: -2rem;
+
+    padding: 0.8rem 0.8rem;
+    background-color: transparent;
+    border: 0.1rem solid var(--accent-color);
+    outline: none;
+    color: var(--font-color);
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+  }
 `;
 
 export default BattleStatsContainer;

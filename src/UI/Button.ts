@@ -22,7 +22,8 @@ export const StyledButton = styled.button<StyledButtonProps>`
   font-weight: 400;
   text-transform: uppercase;
   border: none;
-  color: rgb(228, 228, 228);
+  color: var(--font-color);
+  column-rule: yellow;
   letter-spacing: 0.1rem;
   cursor: pointer;
   border: 1px solid rgba(255, 255, 255, 0.647);

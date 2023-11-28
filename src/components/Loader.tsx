@@ -1,10 +1,12 @@
 import React from "react";
 import pokeballLoader from "../assets/pokeball-loader.gif";
+import { StyledLoader } from "../UI/Loader";
+
 function Loader() {
   return (
-    <div className="loader">
+    <StyledLoader>
       <img src={pokeballLoader} alt="" />
-    </div>
+    </StyledLoader>
   );
 }
 

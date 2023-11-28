@@ -1,11 +1,10 @@
-import styled from "styled-components";
-
+import styled from 'styled-components';
 
 const DetailsContainer = styled.div`
   position: absolute;
   top: 1rem;
   left: 1rem;
-  color: white;
+  color: var(--font-color);
   padding: 1rem;
   width: 25rem;
   text-transform: uppercase;
@@ -30,7 +29,7 @@ const DetailsContainer = styled.div`
     background-color: transparent;
     border: 0.1rem solid var(--accent-color);
     outline: none;
-    color: white;
+    color: var(font-color);
     text-transform: uppercase;
     font-weight: 700;
     letter-spacing: 0.1rem;
@@ -43,4 +42,4 @@ const DetailsContainer = styled.div`
     $dot-color;
 `;
 
-export default DetailsContainer
+export default DetailsContainer;

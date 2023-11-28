@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const AppContainer = styled.div`
   position: relative;
@@ -22,6 +22,5 @@ const AppContainer = styled.div`
       background-color: rgba(219, 219, 219, 0.557);
     }
   }
- 
 `;
-export default AppContainer
+export default AppContainer;

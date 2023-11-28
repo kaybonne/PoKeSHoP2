@@ -1,9 +1,8 @@
 import styled from 'styled-components';
 
-export const PokemonType = styled.div`
+export const StyledLoader = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  gap: 1rem;
+  height: 100%;
 `;

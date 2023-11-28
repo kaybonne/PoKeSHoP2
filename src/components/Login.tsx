@@ -1,9 +1,10 @@
-import { useAppDispatch } from "../app/hooks";
-import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-import { firebaseAuth, firebaseDB, usersRef } from "../utils/firebaseConfig";
-import { FcGoogle } from "react-icons/fc";
-import { addDoc, collection, getDocs, query, where } from "firebase/firestore";
-import { setUserStatus } from "../app/slices/AppSlice";
+import { useAppDispatch } from '../app/hooks';
+import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import { firebaseAuth, firebaseDB, usersRef } from '../utils/firebaseConfig';
+import { FcGoogle } from 'react-icons/fc';
+import { addDoc, collection, getDocs, query, where } from 'firebase/firestore';
+import { setUserStatus } from '../app/slices/AppSlice';
+import { LoginButton, LoginContainer } from '../UI/LoginButton';
 function Login() {
   const dispatch = useAppDispatch();
 
@@ -14,10 +15,10 @@ function Login() {
     } = await signInWithPopup(firebaseAuth, provider);
 
     if (email) {
-      const firestoreQuery = query(usersRef, where("uid", "==", uid));
+      const firestoreQuery = query(usersRef, where('uid', '==', uid));
       const fetchedUser = await getDocs(firestoreQuery);
       if (fetchedUser.docs.length === 0) {
-        await addDoc(collection(firebaseDB, "users"), {
+        await addDoc(collection(firebaseDB, 'users'), {
           uid,
           email,
         });
@@ -27,11 +28,11 @@ function Login() {
   };
 
   return (
-    <div className="login">
-      <button onClick={handleLogin} className="login-btn">
+    <LoginContainer>
+      <LoginButton onClick={handleLogin}>
         <FcGoogle /> Login with Google
-      </button>
-    </div>
+      </LoginButton>
+    </LoginContainer>
   );
 }
 

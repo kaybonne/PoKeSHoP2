@@ -5,6 +5,7 @@ const CompareDetails = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
 `;
 
 export default CompareDetails;

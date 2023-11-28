@@ -22,7 +22,7 @@ const EmptyCompareContainer = styled.div`
     }
   }
   h3 {
-    color: white;
+    color: var(--font-color);
     text-transform: uppercase;
     letter-spacing: 0.3rem;
   }

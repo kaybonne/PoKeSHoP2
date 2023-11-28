@@ -1,9 +1,12 @@
 import { NavLink } from 'react-router-dom';
+import Wrapper from '../sections/Wrapper';
 import styled from 'styled-components';
 import logo from '../assets/logo.png';
 
 const WelcomeContainer = styled.div`
   text-align: center;
+  width: 100%;
+  height: auto;
 `;
 
 const LogoImage = styled.img`
@@ -29,4 +32,4 @@ function Welcome() {
   );
 }
 
-export default Welcome;
+export default Wrapper(Welcome);

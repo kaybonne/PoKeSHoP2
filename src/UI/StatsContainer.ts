@@ -10,7 +10,7 @@ const StatsContainer = styled.div`
     flex-direction: column;
     gap: 1rem;
     li {
-      color: white;
+      color: var(--font-color);;
       text-align: right;
       text-transform: uppercase;
       letter-spacing: 0.1rem;

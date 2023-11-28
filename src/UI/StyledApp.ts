@@ -1,8 +1,8 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const StyledApp = styled.div`
   z-index: 1;
-  background: rgba(4, 6, 20, 0.85);
+  background: var(--background-color); //rgba(4, 6, 20, 0.85);
   box-shadow: 0 8px 32px 0 rgba(6, 8, 28, 0.37);
   backdrop-filter: blur(50px);
   -webkit-backdrop-filter: blur(13px);
@@ -14,11 +14,11 @@ const StyledApp = styled.div`
   grid-template-columns: 1fr;
   .content {
     margin: 0 5rem;
-    border: 0.5px solid rgba(255, 255, 255, 0.203);
+    border: 0.5px solid var(--box-line-color);
     border-top: none;
     border-bottom: none;
     height: 80vh;
   }
 `;
 
-export default StyledApp
+export default StyledApp;

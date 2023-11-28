@@ -3,7 +3,6 @@ import Navbar from './sections/Navbar';
 import Footer from './sections/Footer';
 import Welcome from './pages/Welcome';
 import Background from './components/Background';
-import './scss/index.scss';
 import { Suspense, lazy, useEffect } from 'react';
 import { onAuthStateChanged } from 'firebase/auth';
 import { firebaseAuth } from './utils/firebaseConfig';
@@ -15,6 +14,7 @@ import Loader from './components/Loader';
 import GlobalStyles from './Styles/GlobalStyles';
 import AppContainer from './UI/AppContainer';
 import StyledApp from './UI/StyledApp';
+import { GbModeProvider } from './context/GbModeContext';
 
 const Search = lazy(() => import('./pages/Search'));
 const MyList = lazy(() => import('./pages/MyList'));
@@ -48,7 +48,7 @@ export default function App() {
   }, [toasts, dispatch]);
 
   return (
-    <>
+    <GbModeProvider>
       <GlobalStyles />
       <AppContainer>
         <Background />
@@ -70,6 +70,6 @@ export default function App() {
           </Suspense>
         </BrowserRouter>
       </AppContainer>
-    </>
+    </GbModeProvider>
   );
 }

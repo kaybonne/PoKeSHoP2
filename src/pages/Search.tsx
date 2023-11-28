@@ -1,15 +1,16 @@
 // @ts-nocheck
 
-import React, { useEffect } from "react";
-import Wrapper from "../sections/Wrapper";
-import { debounce } from "../utils";
-import { useAppDispatch, useAppSelector } from "../app/hooks";
-import { getInitialPokemonData } from "../app/reducers/getInitialPokemonData";
-import { getPokemonsData } from "../app/reducers/getPokemonsData";
-import Loader from "../components/Loader";
-import { setLoading } from "../app/slices/AppSlice";
+import React, { useEffect } from 'react';
+import Wrapper from '../sections/Wrapper';
+import { debounce } from '../utils';
+import { useAppDispatch, useAppSelector } from '../app/hooks';
+import { getInitialPokemonData } from '../app/reducers/getInitialPokemonData';
+import { getPokemonsData } from '../app/reducers/getPokemonsData';
+import Loader from '../components/Loader';
+import { setLoading } from '../app/slices/AppSlice';
 
-import PokemonCardGrid from "../components/PokemonCardGrid";
+import PokemonCardGrid from '../components/PokemonCardGrid';
+import { PokemonSearchBar, SearchBar } from '../UI/StyledSearchBar';
 
 function Search() {
   const handleChange = debounce((value: string) => getPokemon(value), 300);
@@ -60,15 +61,14 @@ function Search() {
       {isLoading ? (
         <Loader />
       ) : (
-        <div className="search">
-          <input
+        <SearchBar>
+          <PokemonSearchBar
             type="text"
             onChange={(e) => handleChange(e.target.value)}
-            className="pokemon-searchbar"
             placeholder="Search Pokemon"
           />
           <PokemonCardGrid pokemons={randomPokemons} />
-        </div>
+        </SearchBar>
       )}
     </>
   );

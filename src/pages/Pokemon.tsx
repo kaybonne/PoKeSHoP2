@@ -157,9 +157,8 @@ function Pokemon() {
       {!isDataLoading && currentPokemon ? (
         <>
           {currentPokemonTab === pokemonTabs.description && <Description />}
-          {/* {currentPokemonTab === pokemonTabs.evolution && <Evolution />}
-          {currentPokemonTab === pokemonTabs.locations && <Locations />}
-          {currentPokemonTab === pokemonTabs.moves && <CapableMoves />} */}
+          {currentPokemonTab === pokemonTabs.evolution && <Evolution />}
+
         </>
       ) : (
         <Loader />

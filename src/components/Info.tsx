@@ -40,7 +40,7 @@ export default function Info({
         <h3>Type: {data?.types.join(' - ')}</h3>
         <h3>Evolution: {data?.evolutionLevel}</h3>
         <button onClick={() => dispatch(setPokemonTab(pokemonTabs.evolution))}>
-          See next evolution
+          See evolution tree
         </button>
       </DetailsContainer>
       <StatsContainer>
@@ -96,10 +96,7 @@ export default function Info({
             </li>
           </ul>
         }
-        <button
-          onClick={() => dispatch(addPokemonToList(data!))}
-          className="add-pokemon"
-        >
+        <button onClick={() => dispatch(addPokemonToList(data!))}>
           Add Pokemon
         </button>
       </BattleStatsContainer>
