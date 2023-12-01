@@ -26,9 +26,12 @@ const GlobalStyles = createGlobalStyle`
       --searchbar-background-color: rgba(255, 255, 255, 0.125);
       //--button-font-color: rgb(228, 228, 228);
       --border-radius-s: 1rem;
+      --border-radius-m: 40rem;
+      --border-radius-l: 50rem;
       --border-m: none
       --border-s: none
-      --component-background-color: none;
+      --component-background-color: transparent;
+      --button-add-color: #1f51ff;
 
 
       --accent-color: #f51313;
@@ -43,9 +46,12 @@ const GlobalStyles = createGlobalStyle`
       --searchbar-background-color: #CBD5E0;
       //--button-font-color: #2D3748;
       --border-radius-s: none;
+      --border-radius-m: none;
+      --border-radius-l: none;
       --border-m: 4px solid #2D3748;
       --border-s: 2px solid #2D3748;
       --component-background-color: #E2E8F0;
+      --button-add-color: #1f51ff
       
 
 

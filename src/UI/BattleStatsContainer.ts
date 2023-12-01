@@ -62,7 +62,7 @@ const BattleStatsContainer = styled.div`
     bottom: -2rem;
 
     padding: 0.8rem 0.8rem;
-    background-color: transparent;
+    background-color: var(--component-background-color);
     border: 0.1rem solid var(--accent-color);
     outline: none;
     color: var(--font-color);

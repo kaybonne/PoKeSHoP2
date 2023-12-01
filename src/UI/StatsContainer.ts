@@ -4,6 +4,7 @@ const StatsContainer = styled.div`
   position: absolute;
   left: 1rem;
   bottom: 8rem;
+  background-color: var(--component-background-color);
   ul {
     list-style-type: none;
     display: flex;

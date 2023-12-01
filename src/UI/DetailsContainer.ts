@@ -8,6 +8,7 @@ const DetailsContainer = styled.div`
   padding: 1rem;
   width: 25rem;
   text-transform: uppercase;
+  background-color: var(--component-background-color);
   &::before {
     height: 0.3rem;
     width: 9rem;
@@ -26,10 +27,10 @@ const DetailsContainer = styled.div`
     bottom: -2rem;
 
     padding: 0.8rem 0.8rem;
-    background-color: transparent;
+    background-color: var(--component-background-color);
     border: 0.1rem solid var(--accent-color);
     outline: none;
-    color: var(font-color);
+    color: var(--font-color);
     text-transform: uppercase;
     font-weight: 700;
     letter-spacing: 0.1rem;

@@ -4,7 +4,7 @@ const StyledApp = styled.div`
   z-index: 1;
   background: var(--background-color); //rgba(4, 6, 20, 0.85);
   box-shadow: 0 8px 32px 0 rgba(6, 8, 28, 0.37);
-  backdrop-filter: blur(50px);
+  backdrop-filter: blur(40px);
   -webkit-backdrop-filter: blur(13px);
   border: 1px solid rgba(23, 20, 20, 0.18);
   height: 100vh;

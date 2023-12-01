@@ -15,7 +15,7 @@ const LogoImage = styled.img`
 `;
 
 const P = styled.p`
-  color: #806d6d;
+  color: #161515;
   font-size: 3rem;
 `;
 
