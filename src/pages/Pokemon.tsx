@@ -1,24 +1,22 @@
 // @ts-nocheck
 
-import { useCallback, useEffect, useState } from "react";
-import Wrapper from "../sections/Wrapper";
-import { useParams } from "react-router-dom";
-import { defaultImages, images } from "../utils";
-import { extractColors } from "extract-colors";
-import axios from "axios";
-import Evolution from "./Pokemon/Evolution";
-import Locations from "./Pokemon/Locations";
-import CapableMoves from "./Pokemon/CapableMoves";
-import Description from "./Pokemon/Description";
-import { useAppDispatch, useAppSelector } from "../app/hooks";
-import { setCurrentPokemon } from "../app/slices/PokemonSlice";
-import { setPokemonTab } from "../app/slices/AppSlice";
-import Loader from "../components/Loader";
+import { useCallback, useEffect, useState } from 'react';
+import Wrapper from '../sections/Wrapper';
+import { useParams } from 'react-router-dom';
+import { defaultImages, images } from '../utils';
+import { extractColors } from 'extract-colors';
+import axios from 'axios';
+import Evolution from './Pokemon/Evolution';
+import Description from './Pokemon/Description';
+import { useAppDispatch, useAppSelector } from '../app/hooks';
+import { setCurrentPokemon } from '../app/slices/PokemonSlice';
+import { setPokemonTab } from '../app/slices/AppSlice';
+import Loader from '../components/Loader';
 import {
   pokemonRoute,
   pokemonSpeciesRoute,
   pokemonTabs,
-} from "../utils/constants";
+} from '../utils/constants';
 
 function Pokemon() {
   const params = useParams();
@@ -41,8 +39,8 @@ function Pokemon() {
           pokemon: {
             ...evolutionChain.species,
             url: evolutionChain.species.url.replace(
-              "pokemon-species",
-              "pokemon"
+              'pokemon-species',
+              'pokemon'
             ),
           },
           level,
@@ -51,7 +49,7 @@ function Pokemon() {
       evolutionData.push({
         pokemon: {
           ...evolutionChain.species,
-          url: evolutionChain.species.url.replace("pokemon-species", "pokemon"),
+          url: evolutionChain.species.url.replace('pokemon-species', 'pokemon'),
         },
         level,
       });
@@ -101,7 +99,7 @@ function Pokemon() {
       ).level;
       dataEncounters.forEach((encounter) => {
         encounters.push(
-          encounter.location_area.name.toUpperCase().split("-").join(" ")
+          encounter.location_area.name.toUpperCase().split('-').join(' ')
         );
       });
       const stats = await data.stats.map(({ stat, base_stat }) => ({
@@ -127,7 +125,7 @@ function Pokemon() {
   );
 
   useEffect(() => {
-    const imageElemet = document.createElement("img");
+    const imageElemet = document.createElement('img');
     imageElemet.src = images[params.id];
     const options = {
       pixels: 10000,
@@ -141,7 +139,7 @@ function Pokemon() {
     const getColor = async () => {
       const color = await extractColors(imageElemet.src, options);
       const root = document.documentElement;
-      root.style.setProperty("--accent-color", color[0].hex.split('"')[0]);
+      root.style.setProperty('--accent-color', color[0].hex.split('"')[0]);
     };
     getColor();
     let image = images[params.id];
@@ -158,7 +156,6 @@ function Pokemon() {
         <>
           {currentPokemonTab === pokemonTabs.description && <Description />}
           {currentPokemonTab === pokemonTabs.evolution && <Evolution />}
-
         </>
       ) : (
         <Loader />

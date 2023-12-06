@@ -7,7 +7,7 @@ import React, {
 } from 'react';
 
 interface GbModeProviderProps {
-  children: ReactNode; // Define children prop explicitly as ReactNode type
+  children: ReactNode;
 }
 
 const GbModeContext = createContext<any>(null);

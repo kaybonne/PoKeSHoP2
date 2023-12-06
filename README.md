@@ -38,6 +38,7 @@ yarn start
 
 Create React App
 Styled Components
+Axios
 Redux
 Firebase
 TypeScript

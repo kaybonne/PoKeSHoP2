@@ -14,7 +14,7 @@ export default function Footer() {
   const currentPokemonTab = useAppSelector(
     ({ app: { currentPokemonTab } }) => currentPokemonTab
   );
-  const userInfo = useAppSelector(({ app }) => app.userInfo); // Assuming userInfo indicates user login status
+  const userInfo = useAppSelector(({ app }) => app.userInfo);
   const dispatch = useAppDispatch();
 
   const logOutUser = () => {
@@ -62,7 +62,7 @@ export default function Footer() {
           </ul>
         )}
       </FooterData>
-      {userInfo && ( // Conditionally render the logout button based on the user login status
+      {userInfo && (
         <Block>
           <MdOutlinePowerSettingsNew onClick={logOutUser} />
         </Block>
